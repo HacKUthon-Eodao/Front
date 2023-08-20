@@ -1,5 +1,7 @@
 import 'package:eodao_front/view/login_page.dart';
+import 'package:eodao_front/view/rounded_card.dart';
 import 'package:flutter/material.dart';
+import 'package:eodao_front/view/write_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      home: const MainScreen(),
     );
   }
 }
@@ -48,11 +51,53 @@ class NextScreen extends StatelessWidget {
          onTap: (){
            Navigator.push(
              context,
-             MaterialPageRoute(builder: (context) => LoginPage()),
+             MaterialPageRoute(builder: (context) => const LoginPage()),
            );
          }
        )
       )
+    );
+  }
+}
+
+class NextPostScreen extends StatelessWidget {
+  const NextPostScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: SafeArea(
+            child:
+            GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const WritePage()),
+                  );
+                }
+            )
+        )
+    );
+  }
+}
+
+class MainScreen extends StatelessWidget{
+  const MainScreen({super.key});
+
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+        body: SafeArea(
+            child:
+            GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const WritePage()),
+                  );
+                }
+            )
+        )
     );
   }
 }

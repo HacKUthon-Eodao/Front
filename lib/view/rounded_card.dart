@@ -31,8 +31,9 @@ class _RoundedCardState extends State<RoundedCard>{
           padding: const EdgeInsets.all(8),
             itemCount: feedList.length,
             itemBuilder: (BuildContext context, int index){
-              return Container(
-                height: 50,
+              return SizedBox(
+                width: 500,
+                height: 300,
                 child: Card(
                  shape : RoundedRectangleBorder(
                    borderRadius: BorderRadius.circular(16.0),
@@ -40,8 +41,8 @@ class _RoundedCardState extends State<RoundedCard>{
                   child: Column(
                     children: [
                       Image.network(
-                          feedList[index].imageUrl,
-                          fit: BoxFit.cover,
+                        feedList[index].imageUrl,
+                        fit: BoxFit.cover,
                       ),
                       Padding(
                           padding: const EdgeInsets.all(8.0),

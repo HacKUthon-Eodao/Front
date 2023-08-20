@@ -18,113 +18,109 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
         body: SafeArea(
             child: SingleChildScrollView(
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(height: phoneUnitHeight * 151),
-                    SizedBox(
-                      child: Text(
-                        "오늘 끝나고 모행?",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                        )
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(height: phoneUnitHeight * 151),
+                  const SizedBox(
+                    child: Text(
+                      "오늘 끝나고 모행?",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12,
                       )
+                    )
+                  ),
+                  SizedBox(height: phoneUnitHeight * 13),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(34, 0, 0, 0),
+                    width: double.infinity,
+                    height: 47,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: const Color(0xff1b418c)),
+                      borderRadius: BorderRadius.circular(31),
                     ),
-                    SizedBox(height: phoneUnitHeight * 13),
-                    Container(
-                      padding: EdgeInsets.fromLTRB(34, 0, 0, 0),
+                    child: TextField(
+                      controller: idController,
+                      decoration: const InputDecoration(
+                        hintText: '아이디',
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: phoneUnitHeight * 18),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(34, 0, 0, 0),
+                    width: double.infinity,
+                    height: phoneUnitHeight * 47,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: const Color(0xff1b418c)),
+                      borderRadius: BorderRadius.circular(31),
+                    ),
+                    child: TextField(
+                      controller: pwController,
+                      decoration: const InputDecoration(
+                        hintText: '비밀번호 ',
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: phoneUnitHeight * 22),
+                  GestureDetector(
+                    onTap: () {
+                      print('로그인 클릭');
+                    },
+                    child: Container(
                       width: double.infinity,
-                      height: 47,
+                      height: phoneUnitHeight * 52,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xff1b418c)),
-                        borderRadius: BorderRadius.circular(31),
+                        color: const Color(0xff1b418c),
+                        borderRadius: BorderRadius.circular(40),
                       ),
-                      child: TextField(
-                        controller: idController,
-                        decoration: InputDecoration(
-                          hintText: '아이디',
-                          border: InputBorder.none,
-                          contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: phoneUnitHeight * 18),
-                    Container(
-                      padding: EdgeInsets.fromLTRB(34, 0, 0, 0),
-                      width: double.infinity,
-                      height: phoneUnitHeight * 47,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xff1b418c)),
-                        borderRadius: BorderRadius.circular(31),
-                      ),
-                      child: TextField(
-                        controller: pwController,
-                        decoration: InputDecoration(
-                          hintText: '비밀번호 ',
-                          border: InputBorder.none,
-                          contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: phoneUnitHeight * 22),
-                    GestureDetector(
-                      onTap: () {
-                        print('로그인 클릭');
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        height: phoneUnitHeight * 52,
-                        decoration: BoxDecoration(
-                          color: Color(0xff1b418c),
-                          borderRadius: BorderRadius.circular(40),
-                        ),
-                        child: Center(
-                          child: Text(
-                            '로그인',
-                            style: TextStyle(
-                              color: Color(0xffFFFFFF),
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),
+                      child: const Center(
+                        child: Text(
+                          '로그인',
+                          style: TextStyle(
+                            color: Color(0xffFFFFFF),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(height: phoneUnitHeight * 17),
-                    SizedBox(height: phoneUnitHeight * 86),
-                    GestureDetector(
-                      onTap: () {
-                        print('카카오톡 로그인 클릭');
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        height: phoneUnitHeight * 47,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Color(0xffeff32e)),
-                          borderRadius: BorderRadius.circular(39),
-                        ),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(5),
-                                child: Image.asset("assets/icons/image 10.png"),
-                              ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.fromLTRB(13, 0, 0, 0),
-                              child: Text('카카오톡 로그인 '),
-                            ),
-                          ],
-                        ),
+                  ),
+                  SizedBox(height: phoneUnitHeight * 17),
+                  SizedBox(height: phoneUnitHeight * 86),
+                  GestureDetector(
+                    onTap: () {
+                      print('카카오톡 로그인 클릭');
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: phoneUnitHeight * 47,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: const Color(0xffeff32e)),
+                        borderRadius: BorderRadius.circular(39),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(5),
+                            child: Image.asset("assets/icons/image 10.png"),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.fromLTRB(13, 0, 0, 0),
+                            child: const Text('카카오톡 로그인 '),
+                          ),
+                        ],
                       ),
                     ),
-                  ]
-                )
+                  ),
+                ]
               )
             )
         )
