@@ -1,3 +1,4 @@
+import 'package:eodao_front/view/friendmanage_page.dart';
 import 'package:eodao_front/view/login_page.dart';
 import 'package:eodao_front/view/rounded_card.dart';
 import 'package:flutter/material.dart';
@@ -93,7 +94,7 @@ class MainScreen extends StatelessWidget{
                 onTap: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const WritePage()),
+                    MaterialPageRoute(builder: (context) => const FriendPage()),
                   );
                 }
             )
